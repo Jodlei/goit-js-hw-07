@@ -11,17 +11,8 @@ const markup = items.reduce(
   ""
 );
 container.insertAdjacentHTML("beforeend", markup);
-container.addEventListener("click", onItem);
 
-function onItem(event) {
-  event.preventDefault();
-
-  if (event.target.nodeName !== "IMG") {
-    return;
-  }
-
-  const lightbox = new SimpleLightbox(".gallery a", {
-    captionsData: "alt",
-    captionDelay: 250,
-  });
-}
+const lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
